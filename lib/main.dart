@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int lefDiceNumber = 6;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,13 +27,26 @@ class MyApp extends StatelessWidget {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: Image.asset('assets/images/dice1.png'),
+                    child: TextButton(
+                      onPressed: () {
+                        setState(() {
+                          lefDiceNumber = 5;
+                        });
+                      },
+                      child:
+                          Image.asset('assets/images/dice$lefDiceNumber.png'),
+                    ),
                   ),
                 ),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: Image.asset('assets/images/dice2.png'),
+                    child: TextButton(
+                      onPressed: () {
+                        print('Button 2 pressed');
+                      },
+                      child: Image.asset('assets/images/dice2.png'),
+                    ),
                   ),
                 ),
               ],
