@@ -3,4 +3,4 @@
 
 # Dicee
 
-Just a simple app built to learn flutter
+Just a simple app that changes dices when taping on it
